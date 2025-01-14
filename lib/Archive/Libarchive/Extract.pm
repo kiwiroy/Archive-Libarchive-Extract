@@ -297,7 +297,7 @@ sub extract ($self, %options)
         last if $ret == ARCHIVE_EOF;
         if($ret == ARCHIVE_WARN)
         {
-          Carp::carp($r->erorr_string);
+          Carp::carp($r->error_string);
         }
         elsif($ret < ARCHIVE_WARN)
         {
@@ -320,7 +320,7 @@ sub extract ($self, %options)
     $ret = $dw->finish_entry;
     if($ret == ARCHIVE_WARN)
     {
-      Carp::carp($dw->erorr_string);
+      Carp::carp($dw->error_string);
     }
     elsif($ret < ARCHIVE_WARN)
     {
